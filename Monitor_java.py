@@ -5,16 +5,20 @@ import requests
 import wget
 import sys
 import argparse
-
+import platform
 java_is_installed = True  # tracks if java was already installed on the computer
 
 parser = argparse.ArgumentParser()
-parser.add_argument("j_version", default=8, type=int, help="desired java version")
+parser.add_argument("j_version", type=int, nargs='?', default=8, help="desired java version")
 args = parser.parse_args()
 
 # Parameters for getting JDK
-os_system = "windows"
-architecture = "x64"
+if os.name == 'nt':
+    os_system = "windows"
+else:
+    sys.exit("Please run this on windows")
+
+architecture = "x" + str(re.search(r"^\d+", platform.architecture()[0]).group(0))
 image_type = 'jdk'
 java_version = str(args.j_version)
 JVM = 'hotspot'
