@@ -7,6 +7,8 @@ This is currently intended for windows.
 
 Process:
 
+Get necessary python packages: pip install -r requirements.txt
+
 1- Check if Java is installed
 
 2- Install/Update/ChangeTo desired Java version (Or do nothing)
