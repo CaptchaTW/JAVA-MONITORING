@@ -1,6 +1,8 @@
 # JAVA-MONITORING
 Python script for monitoring 
 
+Important: Java's environnement variables status only refreshes when command line is closed and re-opened.
+
 Process:
 
 1- Check if Java is installed
@@ -20,4 +22,4 @@ positional arguments:
 optional arguments:
   -h, --help      show this help message and exit
 ```
-Does not support JAVA 9 and 10
+Does not support JAVA 9 and 10 (MSI packages not available + deprecated versions)
