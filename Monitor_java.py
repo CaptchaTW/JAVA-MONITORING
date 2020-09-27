@@ -92,7 +92,9 @@ def get_available_versions():
     response = requests.get('https://api.adoptopenjdk.net/v3/info/available_releases', headers=headers)
     available_releases = response.json()
     java_available_releases = available_releases['available_releases']
-
+    # No support for Java 9 and 10
+    java_available_releases.remove(9)
+    java_available_releases.remove(10)
 
 # Check if user specified version exists
 def check_version_exists():
@@ -105,8 +107,9 @@ def check_version_exists():
 def monitor_java():
     get_available_versions()
     check_version_exists()
-   # check_java_version()
-   # check_java_exist(java_version)
-   # update_java(java_version)
+    check_java_version()
+    check_java_exist(java_version)
+    update_java(java_version)
+
 
 monitor_java()
