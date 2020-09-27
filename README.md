@@ -9,7 +9,7 @@ Process:
 
 2- Install/Update/ChangeTo desired Java version (Or do nothing)
 
-3- Send Email to give a status report (IN PROGRESS)
+3- Send Email to give a status report 
 ```
 Usage
 usage: monitor_java.py [-h] [j_version] [sender_email] [receiver_email]
