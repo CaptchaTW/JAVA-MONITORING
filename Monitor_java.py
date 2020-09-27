@@ -10,7 +10,8 @@ import smtplib
 import ssl
 
 java_is_installed = True  # tracks if java was already installed on the computer
-successful_installation = False # Was Java installation successful
+successful_installation = False  # Was Java installation successful
+
 parser = argparse.ArgumentParser()
 parser.add_argument("j_version", type=int, nargs='?', default=8, help="desired java version")
 parser.add_argument("sender_email", type=str, nargs='?', default='talanpythonchallenge@gmail.com', help="sender email")
@@ -29,7 +30,7 @@ port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
 sender_email = args.sender_email  # Enter your address
 receiver_email = args.receiver_email  # Enter receiver address
-password = input("Type your password and press enter: ")
+password = input("Type your password (Sender's email) and press enter: ")
 
 architecture = "x" + str(re.search(r"^\d+", platform.architecture()[0]).group(0))
 image_type = 'jdk'
@@ -83,6 +84,7 @@ def check_java_argument_version(version):
     return version == version_number[-1]
 
 
+# Install java using Openjdkapi
 def install_java(custom_version):
     global successful_installation
     url = 'https://api.adoptopenjdk.net/v3/installer/latest/' + custom_version + '/ga/' + os_system + '/' + architecture \
@@ -92,10 +94,12 @@ def install_java(custom_version):
     os.system('msiexec /i ' + filename + ' INSTALLLEVEL=2 /passive')
     print("Installed:", filename)
     successful_installation = True
+    # Removes installation file to prevent future conflicts
     if os.path.exists(filename):
         os.remove(filename)
 
 
+# Sends status email
 def send_status_email():
     if successful_installation:
         message = "Subject: Testing\n\n Successful Java Installation: " + java_version
