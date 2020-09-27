@@ -3,6 +3,8 @@ Python script for monitoring
 
 Important: Java's environnement variables status only refreshes when command line is closed and re-opened.
 
+This is currently intended for windows.
+
 Process:
 
 1- Check if Java is installed
