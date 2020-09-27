@@ -13,7 +13,10 @@ Process:
 
 3- Send Email to give a status report 
 ```
-Usage
+Usage:
+
+Get necessary python packages: pip install -r requirements.txt
+
 usage: monitor_java.py [-h] [j_version] [sender_email] [receiver_email]
 
 positional arguments:
