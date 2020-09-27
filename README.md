@@ -15,7 +15,7 @@ Usage
 usage: monitor_java.py [-h] [j_version] [sender_email] [receiver_email]
 
 positional arguments:
-  j_version       desired java version (default:8)
+  j_version       desired java version (default:8)(eg: 8,10,11,12,13,14,15)
   sender_email    sender email (default:talonpythonchallenge@gmail.com)
   receiver_email  receiver email (default:yuchenmichaelchu@gmail.com)
 
