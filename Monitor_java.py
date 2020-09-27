@@ -106,6 +106,7 @@ def send_status_email():
         with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
             server.login(sender_email, password)
             server.sendmail(sender_email, receiver_email, message)
+        print("Sent status email to: " + receiver_email)
     except smtplib.SMTPAuthenticationError:
         print("Authentication Error: - Check User and Password \nCheck if sender's email allows third party app access")
 
