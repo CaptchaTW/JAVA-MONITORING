@@ -102,9 +102,9 @@ def install_java(custom_version):
 # Sends status email
 def send_status_email():
     if successful_installation:
-        message = "Subject: Testing\n\n Successful Java Installation: " + java_version
+        message = "Subject: Testing\n\n Successful Java check, version: " + java_version
     else:
-        message = "Subject: Testing\n\n Failed to Install Java: " + java_version
+        message = "Subject: Testing\n\n Failed Java check, version: " + java_version
     try:
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
