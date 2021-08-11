@@ -1,6 +1,8 @@
 # JAVA-MONITORING
 Python script for monitoring 
+
 SCRIPT CREATED FOR THE EVALUATION BY THE COMPANY TALAN, not refined, revised, or up to date.
+
 Important: Java's environnement variables status only refreshes when command line is closed and re-opened.
 
 This is currently intended for windows.
